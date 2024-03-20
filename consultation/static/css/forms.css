@@ -1,0 +1,11 @@
+.form-control,
+.form-select {
+  background-color: var(--color9);
+}
+
+:focus.form-control,
+:focus.form-select,
+:focus option {
+  /* background-color: var(--color8); */
+  box-shadow: 0 0 0 0.1rem var(--color1);
+}

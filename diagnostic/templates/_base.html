@@ -1,0 +1,66 @@
+{% load static tailwind_tags %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}Kare{% endblock title %}</title>
+    <link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon">
+    <script src="{% static 'turbolinks/turbolinks.js' %}"></script>
+    {% load bootstrap5 %} {% bootstrap_css %} {% bootstrap_javascript %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg">
+      <div class="container-fluid">
+        <a class="navbar-brand text-white" href="/">Kare</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          {% comment %} <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item dropdown">
+              <button
+                class="btn btn-link nav-link dropdown-toggle text-white"
+                role="button"
+                data-bs-toggle="dropdown"
+                data-bs-trigger="hover"
+                aria-expanded="false">
+                Drug
+              </button>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="/medecin">Drug item</a>
+                </li>
+              </ul>
+            </li>
+          </ul> {% endcomment %}
+          {% comment %} <form class="d-flex" role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Rechercher..."
+              aria-label="Search" />
+            <button class="btn btn-outline-secondary" type="submit">
+              Search
+            </button>
+          </form> {% endcomment %}
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a href="{% url 'consultation_index' %}" class="btn btn-primary rounded-pill animate">Faire une consultation</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    {% block body %}{% endblock %}
+  </body>
+</html>

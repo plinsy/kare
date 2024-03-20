@@ -1,0 +1,27 @@
+[data-loadable] * {
+  transition-delay: 2000ms;
+  transition-duration: 1000ms;
+}
+
+[data-loadable] .loading-section,
+[data-loadable] .error-section,
+[data-loadable] .loaded-section,
+[data-loadable] .empty-section {
+  display: none;
+}
+
+[data-loadable].loaded .loaded-section {
+  display: block;
+}
+
+[data-loadable].loading .loading-section {
+  display: block;
+}
+
+[data-loadable].empty .empty-section {
+  display: block;
+}
+
+[data-loadable].error .error-section {
+  display: block;
+}
